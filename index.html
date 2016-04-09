@@ -1,0 +1,42 @@
+<html>
+  <head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="pomodoro.js"></script>
+  </head>
+  <body>
+  <div ng-app="pomoApp" class="container">
+    <div ng-controller="PomodoroController">
+      <div class="row">
+        <div class="col-sm-12 title text-center">
+          <h1>Pomodoro Timer</h1>
+        </div>
+        <div class="col-sm-6 text-center pad-me">
+          <h2>Work Time</h2>
+          <h2><i class="plus-minus fa fa-minus" ng-click="modifyTime(timerParts.workTime, 'work', -1)">&nbsp;</i> {{timerParts.workTime}}&nbsp;<i class="plus-minus fa fa-plus" ng-click="modifyTime(timerParts.workTime, 'work', 1)"></i></h2>
+        </div>
+        <div class="col-sm-6 text-center pad-me">
+          <h2>Break Time</h2>
+          <h2><i class="plus-minus fa fa-minus" ng-click="modifyTime(timerParts.breakTime, 'break', -1)"></i>&nbsp;{{timerParts.breakTime}}&nbsp;<i class="plus-minus fa fa-plus" ng-click="modifyTime(timerParts.breakTime, 'break', 1)"></i></h2>
+        </div>
+        <div class="col-sm-12">
+            <div class="load-container" ng-style="timerParts.style">
+              <h1 class="text-center vertical-center">{{timerParts.timeLeft | timeFilter}}</h1>
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-6 pad-me">
+        <button class="btn btn-success btn-block" ng-click="startTimer()">Go</button>
+      </div>
+      <div class="col-xs-6 pad-me">
+        <button class="btn btn-warning btn-block" ng-click="pause()">Pause</button>
+      </div>
+      <div class="col-xs-12 pad-me">
+        <button class="btn btn-danger btn-block" ng-click="reset()">Reset</button>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

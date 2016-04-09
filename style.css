@@ -1,0 +1,30 @@
+body {
+  min-width:200px;
+}
+.title {
+  background-color: black;
+  color:white;
+  border-radius: 5px;
+}
+.load-container {
+  color: grey;
+  background-color: white;
+  border-color:black;
+  height: 150px;
+  width: 150px;
+  border: 3px solid black;
+  border-radius: 100%;
+  margin: 15px auto 15px auto;
+}
+.vertical-center {
+  margin-top:35%;
+}
+.plus-minus:hover {
+  color: grey;
+}
+.plus-minus:active {
+  color: black;
+}
+.pad-me {
+  padding: 10px;
+}
